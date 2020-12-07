@@ -1,0 +1,22 @@
+{
+  "name": "bb8-by-devtips",
+  "version": "1.0.0",
+  "description": "BB-8 Styled by Justas Galaburda, Animated by DevTips",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/montgomeryrd/bb8-by-devTips.git"
+  },
+  "author": "Richard Montgomery",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/montgomeryrd/bb8-by-devTips/issues"
+  },
+  "homepage": "https://github.com/montgomeryrd/bb8-by-devTips#readme",
+  "devDependencies": {
+    "sass": "^1.30.0"
+  }
+}
