@@ -1,0 +1,524 @@
+// Keyframes
+@keyframes spin {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  90% {
+    transform: scale(0.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes move {
+  0% {
+    left: 5%;
+    transform: scale(0);
+  }
+  10% {
+    transform: scale(1);
+  }
+  90% {
+    transform: scale(1);
+  }
+  100% {
+    left: 55%;
+    transform: scale(0);
+  }
+}
+
+// Page Styles
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates|Reenie+Beanie&display=swap');
+
+// Variables
+$bg: #F5FAFC;
+$base: #F4F4FD;
+$base-tint: #A7D0E0;
+$stroke: #244356;
+$orange: #FDC23E;
+$blue: #449BAA;
+$red: #FF7761;
+
+h2 {
+  font-family: 'Montserrat Alternates', sans-serif;
+  text-align: center;
+  margin: 50px;
+}
+.credit {
+  font-family: 'Reenie Beanie', cursive;
+  text-align: center;
+  color: #999;
+}
+a {
+  color: #333;
+}
+hr {
+  margin: 100px auto 50px;
+  width: 160px;
+  border-top: 1px solid #ccc;
+  border-left: 0px solid #eee;
+}
+  
+// Styles
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #eee;
+}
+.artboard {
+  width: 800px;
+  height: 600px;
+  background-color: $bg;
+  box-shadow: 0px 3px 20px rgba(0,0,0,0.8);
+  border-radius: 3px;
+  margin: 50px auto;
+  border: 10px white solid;
+  position: relative;
+}
+.bb8 {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  top: 222px;
+  left: 180px;
+}
+.bb8-body {
+  position: absolute;
+  background: $base;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: solid 8px $stroke;
+  overflow: hidden;
+  animation: spin 1s linear infinite;
+
+  .circle {
+    position: absolute;
+    background-color: $orange;
+    border: 8px solid $stroke;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+  
+    &:after {
+      display: block;
+      position: absolute;
+      content: "";
+      background-color: $base;
+      border: 8px solid $stroke;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      height: 35%;
+      width: 35%;
+    }
+  }    
+  .circle-1 {
+    top: 10px;
+    left: -30px;
+  }
+  .circle-2 {
+    top: 123px;
+    left: 80px;
+  }
+  .circle-3 {
+    top: -40px;
+    left: 120px;
+  }
+  .dot {
+    position: absolute;
+    background: $stroke;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+  }
+  .dot-1 {
+    top: 80px;
+    left: 110px;
+  }
+  .dot-2 {
+    top: 155px;
+    left: 35px;
+  }
+  .line {
+    position: absolute;
+    background: $stroke;
+    width: 100px;
+    height: 8px;
+  }
+  .line-1 {
+    transform: rotate(45deg);
+    top: 105px;
+    left: 10px;
+  }
+  .line-2 {
+    transform: rotate(162deg);
+    top: 40px;
+    left: 50px;
+  }
+  .line-3 {
+    transform: rotate(-76deg);
+    top: 110px;
+    left: 110px;
+  }
+}
+.body-shadow-crop {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+
+  .body-shadow {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 60px rgba(0,0,0,0.4);
+    left: -50px;
+    top: -20px;
+  }
+}
+.bb8-head {
+  z-index: 1;
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  top: -60px;
+  left: -30px;
+  transform: rotate(-30deg);
+  
+  .head {
+    position: absolute;
+    background: $base;
+    border-radius: 50%;
+    border: 8px solid $stroke ;
+    width: 160px;
+    height: 160px;
+    box-shadow: -15px -25px 0px 5px rgba(0,0,0,0.15) inset;
+  }
+  .head-crop {
+    position: relative;
+    height: 50%;
+    overflow: hidden;
+  }
+  .head-bottom-base,
+  .head-side-1,
+  .head-side-2 {
+    position: absolute;
+    background: $base-tint;
+    height: 20px;
+    border-bottom: 8px solid $stroke;
+  }
+  .head-bottom-base {
+    width: 78%;
+    left: 11%;
+  }
+  .head-side-1 {
+    z-index: -10;
+    width: 30px;
+    top: 75px;
+    right: 1px;
+    transform: rotate(-45deg);
+    border-radius: 0px 0px 5px 6px;
+  }
+  .head-side-2 {
+    z-index: -10;
+    width: 30px;
+    top: 75px;
+    left: 0px;
+    transform: rotate(45deg);
+    border-radius: 0px 0px 6px 6px;
+  }
+  .lens {
+    position: absolute;
+    background: #295A6D;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 8px solid $stroke;
+    top: 20px;
+    left: 32%;
+    overflow: hidden;
+    
+    &:before,
+    &:after {
+      display: block;
+      position: absolute;
+      content: "";
+      background: #2A6B80;
+      width: 10px;
+      height: 70px;
+      left: 10px;
+      top: -20px;
+      transform: rotate(40deg);
+    }
+    &:after {
+      width: 2px;
+      left: 26px;
+      top: -19px;
+    }
+  }
+  .freckle {
+    position: absolute;
+    background: $stroke;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    top: 60px;
+    left: 120px;
+  }
+}
+.speedlines > div {
+  position: absolute;
+  background: $stroke;
+  width: 55px;
+  height: 8px;
+  border-radius: 8px;
+  left: 120px;
+  
+  &.tail:after {
+    display: block;
+    position: absolute;
+    background: $stroke;
+    content: "";
+    border-radius: 8px;
+    width: 20px;
+    height: 8px;
+    left: 100%;
+    margin-left: 5px;
+  }
+  &.one {
+    top: -60px;
+    left: 53px;
+  }
+  &.two {
+    top: -21px;
+    left: 113px;
+  }
+  &.three {
+    z-index: 10;
+    top: -10px;
+    left: 103px;
+    width: 30px;
+  }
+  &.four {
+    top: 121px;
+    left: 203px;
+    width: 30px;
+  }
+  &.five {
+    top: 141px;
+    left: 218px;
+    width: 50px;
+  }
+}
+.sparkles > div {
+  z-index: 20;
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  
+  &:before,
+  &:after {
+    display: block;
+    position: absolute;
+    content: "";
+    background: $red;
+    border-radius: 20px;
+    width: 40%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &:after {
+    transform: translate(-50%,-50%) rotate(90deg);
+  }
+  &.blue:before,
+  &.blue:after {
+    background: $blue;
+  }
+  &.orange:before,
+  &.orange:after {
+    background: $orange;
+  }
+  &.small {
+    transform: scale(0.4);
+  }
+  &.med {
+    transform: scale(0.6);
+  }
+  &.one {
+    top: -53px;
+    left: 140px;
+  }
+  &.two {
+    top: -46px;
+    left: 210px;
+  }
+  &.three {
+    top: -6px;
+    left: 186px;
+  }
+  &.four {
+    top: -16px;
+    left: 280px;
+  }    
+  &.five {
+    top: 44px;
+    left: 230px;
+  }
+  &.six {
+    top: 94px;
+    left: 240px;
+  }
+  &.seven {
+    top: 154px;
+    left: 216px;
+  }
+  &.eight {
+    top: 187px;
+    left: 185px;
+  } 
+  &.nine {
+    top: 63px;
+    left: 325px;
+  }   
+  &.ten {
+    top: 124px;
+    left: 315px;
+  }  
+  &.eleven {
+    top: 161px;
+    left: 294px;
+  }
+  &.twelve {
+    top: 27px;
+    left: 366px;
+  }
+  &.thirteen {
+    top: 37px;
+    left: 415px;
+  }
+  &.fourteen {
+    top: 87px;
+    left: 385px;
+  }   
+  &.fifteen {
+    top: 137px;
+    left: 378px;
+  }
+  &.sixteen {
+    top: 97px;
+    left: 455px;
+  }
+  &.pulse {
+    animation: pulse 1s linear infinite;
+  }
+  &.pulse-1 {
+    animation: pulse 1s 300ms linear infinite;
+  }
+  &.pulse-2 {
+    animation: pulse 1s 600ms linear infinite;
+  }
+  &.pulse-3 {
+    animation: pulse 1s 900ms linear infinite;
+  }
+}
+    
+.ground > div {
+  position: absolute;
+  background: $stroke;
+  border-radius: 8px;
+  width: 80px;
+  height: 8px;
+  top: 212px;
+  left: -90px;
+    
+  &.one .bump {
+    left: 40px;
+  }
+  &.two {
+    width: 25px;
+    left: -1px;
+  }
+  &.three {
+    width: 300px;
+    left: 34px;
+  }
+  &.four {
+    width: 90px;
+    left: 346px;
+    .bump {
+      left: 10px;
+    }
+  }
+  &.five {
+    width: 20px;
+    left: 450px;
+  }
+  &.six {
+    width: 80px;
+    top: 245px;
+    left: 11px;
+    .bump {
+      left: 10px;
+    }
+  }
+  &.seven {
+    width: 127px;
+    top: 245px;
+    left: 171px;
+    .bump {
+      left: 60px;
+    }
+  }
+  &.eight {
+    width: 120px;
+    top: 290px;
+    left: 71px;
+    .bump {
+      left: 30px;
+    }
+  }
+  .bump {
+    position: absolute;
+    width: 30px;
+    height: 15px;
+    top: -7px;
+    overflow: hidden;
+    animation: move 1s linear infinite;
+    
+    &.move-1 {
+      animation: move 0.8s linear infinite;
+    }
+    &.move-2 {
+      animation: move 0.6s linear infinite;
+    }
+    &.move-3 {
+      animation: move 0.4s linear infinite;
+    }
+    &:after {
+      display: block;
+      content: "";
+      background: $bg;
+      border: 8px solid $stroke;
+      border-radius: 50%;
+      box-sizing: border-box;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
